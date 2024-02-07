@@ -18,10 +18,9 @@ module.exports = {
     browser: true
   },
   rules: {
-    'vue/multi-word-component-names': 'off',
-    'vue/no-reserved-component-names': 'off',
-    'no-unused-vars': 'off',
-    'no-tabs': 'off',
-    'space-before-function-paren': 0
+    'vue/multi-word-component-names': 'off', //允許使用單一單字的組件名稱。
+    'vue/no-reserved-component-names': 'off', // 允許使用保留的組件名稱
+    'no-tabs': 'off', // 強制統一使用空格來縮進。
+    'space-before-function-paren': 0 // 函數括號前的空格的檢查設為0
   }
 }
