@@ -20,12 +20,21 @@ export default defineConfig({
       deep: true,
       include: [/\.vue$/, /\.vue\?vue/],
       directoryAsNamespace: true,
-      dts: resolve(__dirname, './src/components.d.ts'),
-      dirs: [resolve(__dirname, './src/components'), 'components']
+      dts: resolve(__dirname, './components.d.ts'),
+      dirs: [resolve(__dirname, './src/components/'), 'components']
     }),
     AutoImport({
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/, // .md
+      ],
       imports: ['vue', 'vue-router'],
-      dts: 'src/auto-imports.js'
+      dts: './auto-imports.d.ts',
+      eslintrc: {
+        enabled: true,
+      }
     })
   ],
   resolve: {
